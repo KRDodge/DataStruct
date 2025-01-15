@@ -1,5 +1,6 @@
 #include "page20test.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 
@@ -31,7 +32,7 @@ namespace Chapter1 {
 
 	void GetDivZeroInput()
 	{
-		cout << "3°³ ¼ö ÀÔ·Â" << endl;
+		cout << "3ê°œ ìˆ˜ ìž…ë ¥" << endl;
 
 		int a, b, c;
 		cin >> a >> b >> c;
@@ -40,17 +41,27 @@ namespace Chapter1 {
 		test.DivZero(a, b, c);
 	}
 
-	void GetArrayInput() 
+	int* GetArrayInput() 
 	{
 		int n;
 		int a;
-		cout << "¹è¿­ °³¼ö n:";
+		cout << "ë°°ì—´ ê°œìˆ˜ n:";
 		cin >> n;
 
-		cout << "~ ±îÁö ´õÇÒ ÀÎµ¦½º a:";
+		cout << "~ ê¹Œì§€ ë”í•  ì¸ë±ìŠ¤ a:";
 		cin >> a;
 
-		AddArray(n, a);
+		int *arr = new int[2];
+		arr[0] = n;
+		arr[1] = a;
+
+		return arr;
+	}
+
+	void AddArray()
+	{
+		int* arr = GetArrayInput();
+		AddArray(arr[0], arr[1]);
 	}
 
 	void AddArray(int n, int a)
@@ -74,5 +85,32 @@ namespace Chapter1 {
 		cout << sum << endl;
 
 		delete[] arr;
+	}
+
+	void BinarySearch()
+	{
+
+	}
+
+	int BinarySearch(int* _a, const int _t, int _left, int _right)
+	{
+		int middle = (_left + _right) / 2;
+		if (_t < _a[middle])
+			return BinarySearch(_a, _t, _left, middle);
+		else if (_t > _a[middle])
+			return BinarySearch(_a, _t, middle, _right);
+		else if (_t == _a[middle])
+			return middle;
+		return -1;
+	}
+
+	void Permutations()
+	{
+	}
+
+	string Permutations(char* _a, const int _t, const int _m)
+	{
+		string str;
+		return str;
 	}
 }

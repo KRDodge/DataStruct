@@ -9,7 +9,7 @@ int main()
 {
 	//Chapter1::NewandDelete();
 	//Chapter1::GetDivZeroInput();
-	Chapter1::GetArrayInput();
+	Chapter1::AddArray();
 	
 	return 0;
 }

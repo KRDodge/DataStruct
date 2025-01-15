@@ -1,4 +1,7 @@
 #pragma once
+#include <string>
+
+using namespace std;
 
 namespace Chapter1 {
 
@@ -11,7 +14,15 @@ namespace Chapter1 {
 	};
 
 	void GetDivZeroInput();
-	void GetArrayInput();
+	int* GetArrayInput();
+
+	void AddArray();
 	void AddArray(int n, int a);
+
+	void BinarySearch();
+	int BinarySearch(int* _a, const int _t, int _left, int _right);
+	
+	void Permutations();
+	string Permutations(char *_a, const int _t, const int _m);
 }
 
