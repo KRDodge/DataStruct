@@ -41,41 +41,50 @@ namespace Chapter1 {
 		test.DivZero(a, b, c);
 	}
 
-	int* GetArrayInput() 
+	int GetArraySize()
 	{
-		int n;
-		int a;
+		int n = 0;
 		cout << "배열 개수 n:";
 		cin >> n;
-
-		cout << "~ 까지 더할 인덱스 a:";
-		cin >> a;
-
-		int *arr = new int[2];
-		arr[0] = n;
-		arr[1] = a;
-
-		return arr;
+		return n;
 	}
 
-	void AddArray()
+	int* GetIntArrayInput(int n) 
 	{
-		int* arr = GetArrayInput();
-		AddArray(arr[0], arr[1]);
-	}
-
-	void AddArray(int n, int a)
-	{
-		if (a > n)
-		{
-			cout << "index is bigger than n" << endl;
-		}
-		int *arr = new int[n];
+		int* arr = new int[n];
 		for (int i = 0; i < n; ++i)
 		{
 			cin >> arr[i];
 		}
 
+		return arr;
+	}
+
+	char* GetCharArrayInput(int n)
+	{
+		char* arr = new char[n];
+		for (int i = 0; i < n; ++i)
+		{
+			cin >> arr[i];
+		}
+		return arr;
+	}
+
+	void AddArray()
+	{
+		int n = GetArraySize();
+		int* arr = GetIntArrayInput(n);
+		int a;
+
+		cout << "~ 까지 더할 인덱스 a:";
+		cin >> a;
+
+		AddArray(arr, a);
+		delete[] arr;
+	}
+
+	void AddArray(int* arr, int a)
+	{
 		int sum = 0;
 		for (int i = 0; i < a; ++i)
 		{
@@ -83,22 +92,30 @@ namespace Chapter1 {
 		}
 
 		cout << sum << endl;
-
-		delete[] arr;
 	}
 
 	void BinarySearch()
 	{
+		int n = GetArraySize();
+		int* arr = GetIntArrayInput(n);
 
+		int a;
+		cout << "찾을 수 a:";
+		cin >> a;
+
+		int res = BinarySearch(arr, a, 0, n);
+
+		cout << res << endl;
+		delete[] arr;
 	}
 
 	int BinarySearch(int* _a, const int _t, int _left, int _right)
 	{
 		int middle = (_left + _right) / 2;
 		if (_t < _a[middle])
-			return BinarySearch(_a, _t, _left, middle);
+			return BinarySearch(_a, _t, _left, middle - 1);
 		else if (_t > _a[middle])
-			return BinarySearch(_a, _t, middle, _right);
+			return BinarySearch(_a, _t, middle + 1, _right);
 		else if (_t == _a[middle])
 			return middle;
 		return -1;
@@ -106,11 +123,27 @@ namespace Chapter1 {
 
 	void Permutations()
 	{
+		int n = GetArraySize();
+		char* arr = GetCharArrayInput(n);
+		Permutations(arr, 0, n);
 	}
 
-	string Permutations(char* _a, const int _t, const int _m)
+	void Permutations(char* _a, const int _k, const int _m)
 	{
-		string str;
-		return str;
+		if (_k == _m)
+		{
+			for (int i = 0; i <= _m; i++)
+				cout << _a[i] << " ";
+			cout << endl;
+		}
+		else
+		{
+			for (int i = _k; i < _m; ++i)
+			{
+				swap(_a[_k], _a[i]);
+				Permutations(_a, _k + 1, _m);
+				swap(_a[_k], _a[i]);
+			}
+		}
 	}
 }

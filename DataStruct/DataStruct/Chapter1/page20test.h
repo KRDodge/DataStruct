@@ -14,15 +14,16 @@ namespace Chapter1 {
 	};
 
 	void GetDivZeroInput();
-	int* GetArrayInput();
+	int GetArraySize();
+	int* GetIntArrayInput(int n);
 
 	void AddArray();
-	void AddArray(int n, int a);
+	void AddArray(int* n, int a);
 
 	void BinarySearch();
 	int BinarySearch(int* _a, const int _t, int _left, int _right);
 	
 	void Permutations();
-	string Permutations(char *_a, const int _t, const int _m);
+	void Permutations(char *_a, const int _t, const int _m);
 }
 

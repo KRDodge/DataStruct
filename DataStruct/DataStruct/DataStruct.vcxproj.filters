@@ -24,25 +24,31 @@
     <ClCompile Include="Main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="memory.cpp">
+    <ClCompile Include="Chapter1\memory.cpp">
       <Filter>소스 파일\Chapter1</Filter>
     </ClCompile>
-    <ClCompile Include="page20test.cpp">
+    <ClCompile Include="Chapter1\page20test.cpp">
       <Filter>소스 파일\Chapter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter1\page27test.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="memory.h">
+    <ClInclude Include="Chapter1\memory.h">
       <Filter>헤더 파일\Chapter1</Filter>
     </ClInclude>
-    <ClInclude Include="page20test.h">
+    <ClInclude Include="Chapter1\page20test.h">
       <Filter>헤더 파일\Chapter1</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter1\page27test.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="c1.txt" />
+    <Text Include="Chapter1\c1.txt" />
   </ItemGroup>
 </Project>
