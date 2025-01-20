@@ -128,12 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Chapter1\page27test.cpp" />
+    <ClCompile Include="Chapter1\stl.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Chapter1\memory.cpp" />
     <ClCompile Include="Chapter1\page20test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter1\page27test.h" />
+    <ClInclude Include="Chapter1\stl.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Chapter1\memory.h" />
     <ClInclude Include="Chapter1\page20test.h" />

@@ -33,6 +33,9 @@
     <ClCompile Include="Chapter1\page27test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Chapter1\stl.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -45,6 +48,9 @@
       <Filter>헤더 파일\Chapter1</Filter>
     </ClInclude>
     <ClInclude Include="Chapter1\page27test.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter1\stl.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
