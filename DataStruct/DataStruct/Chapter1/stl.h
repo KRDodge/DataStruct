@@ -9,4 +9,7 @@ namespace Chapter1 {
 	void Copy();
 	void NPermutations();
 
+	void MagicSquare();
+	void SeqSearchTime();
+	int SequentialSearch(int* a, const int n, const int x);
 }

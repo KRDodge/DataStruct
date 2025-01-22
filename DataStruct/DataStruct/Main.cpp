@@ -19,7 +19,9 @@ int main()
 	
 	//Chapter1::Product();
 	//Chapter1::Copy();
-	Chapter1::NPermutations();
+	//Chapter1::NPermutations();
+	//Chapter1::MagicSquare();
+	Chapter1::SeqSearchTime();
 	
 	return 0;
 }
