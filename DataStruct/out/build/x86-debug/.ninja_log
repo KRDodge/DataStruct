@@ -1,0 +1,14 @@
+# ninja log v5
+2	550	7594191701585920	CMakeFiles/DataStruct.dir/DataStruct.cpp.obj	87c11202e2136e3a
+6	12	0	clean	715f49175362d5f9
+3	572	7594192500641457	CMakeFiles/DataStruct.dir/DataStruct.cpp.obj	29a1a3db8a89a963
+11	613	7594192501051548	CMakeFiles/DataStruct.dir/src/chapter1/page27test.cpp.obj	13719d3252455cae
+9	614	7594192501061555	CMakeFiles/DataStruct.dir/src/chapter1/page20test.cpp.obj	5eb2afa938cd0a3f
+14	677	7594192501691695	CMakeFiles/DataStruct.dir/src/chapter1/stl.cpp.obj	16f5141bb864f35d
+11	561	7594192831593345	CMakeFiles/DataStruct.dir/src/chapter1/memoryTest.cpp.obj	fdb2485786e6142f
+17	603	7594192832013435	CMakeFiles/DataStruct.dir/src/chapter1/page27test.cpp.obj	13719d3252455cae
+14	604	7594192832023443	CMakeFiles/DataStruct.dir/src/chapter1/page20test.cpp.obj	5eb2afa938cd0a3f
+19	668	7594192832653583	CMakeFiles/DataStruct.dir/src/chapter1/stl.cpp.obj	16f5141bb864f35d
+668	994	7594192835604724	DataStruct.exe	3bdb9d2daed1ab79
+13	575	7594193026520895	CMakeFiles/DataStruct.dir/DataStruct.cpp.obj	29a1a3db8a89a963
+575	723	7594193027571125	DataStruct.exe	3bdb9d2daed1ab79
