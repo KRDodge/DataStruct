@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_DataStruct: phony || .
 
 build CMakeFiles\DataStruct.dir\DataStruct.cpp.obj: CXX_COMPILER__DataStruct_unscanned_Debug E$:\Project\DataStruct\DataStruct\DataStruct.cpp || cmake_object_order_depends_target_DataStruct
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
-  INCLUDES = -IE:\Project\DataStruct\DataStruct\include -IE:\Project\DataStruct\DataStruct\include\chapter1 -IE:\Project\DataStruct\DataStruct\include\chapter2
+  INCLUDES = -IE:\Project\DataStruct\DataStruct\include
   OBJECT_DIR = CMakeFiles\DataStruct.dir
   OBJECT_FILE_DIR = CMakeFiles\DataStruct.dir
   TARGET_COMPILE_PDB = CMakeFiles\DataStruct.dir\
@@ -59,7 +59,7 @@ build CMakeFiles\DataStruct.dir\DataStruct.cpp.obj: CXX_COMPILER__DataStruct_uns
 
 build CMakeFiles\DataStruct.dir\src\chapter1\memoryTest.cpp.obj: CXX_COMPILER__DataStruct_unscanned_Debug E$:\Project\DataStruct\DataStruct\src\chapter1\memoryTest.cpp || cmake_object_order_depends_target_DataStruct
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
-  INCLUDES = -IE:\Project\DataStruct\DataStruct\include -IE:\Project\DataStruct\DataStruct\include\chapter1 -IE:\Project\DataStruct\DataStruct\include\chapter2
+  INCLUDES = -IE:\Project\DataStruct\DataStruct\include
   OBJECT_DIR = CMakeFiles\DataStruct.dir
   OBJECT_FILE_DIR = CMakeFiles\DataStruct.dir\src\chapter1
   TARGET_COMPILE_PDB = CMakeFiles\DataStruct.dir\
@@ -67,7 +67,7 @@ build CMakeFiles\DataStruct.dir\src\chapter1\memoryTest.cpp.obj: CXX_COMPILER__D
 
 build CMakeFiles\DataStruct.dir\src\chapter1\page20test.cpp.obj: CXX_COMPILER__DataStruct_unscanned_Debug E$:\Project\DataStruct\DataStruct\src\chapter1\page20test.cpp || cmake_object_order_depends_target_DataStruct
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
-  INCLUDES = -IE:\Project\DataStruct\DataStruct\include -IE:\Project\DataStruct\DataStruct\include\chapter1 -IE:\Project\DataStruct\DataStruct\include\chapter2
+  INCLUDES = -IE:\Project\DataStruct\DataStruct\include
   OBJECT_DIR = CMakeFiles\DataStruct.dir
   OBJECT_FILE_DIR = CMakeFiles\DataStruct.dir\src\chapter1
   TARGET_COMPILE_PDB = CMakeFiles\DataStruct.dir\
@@ -75,7 +75,7 @@ build CMakeFiles\DataStruct.dir\src\chapter1\page20test.cpp.obj: CXX_COMPILER__D
 
 build CMakeFiles\DataStruct.dir\src\chapter1\page27test.cpp.obj: CXX_COMPILER__DataStruct_unscanned_Debug E$:\Project\DataStruct\DataStruct\src\chapter1\page27test.cpp || cmake_object_order_depends_target_DataStruct
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
-  INCLUDES = -IE:\Project\DataStruct\DataStruct\include -IE:\Project\DataStruct\DataStruct\include\chapter1 -IE:\Project\DataStruct\DataStruct\include\chapter2
+  INCLUDES = -IE:\Project\DataStruct\DataStruct\include
   OBJECT_DIR = CMakeFiles\DataStruct.dir
   OBJECT_FILE_DIR = CMakeFiles\DataStruct.dir\src\chapter1
   TARGET_COMPILE_PDB = CMakeFiles\DataStruct.dir\
@@ -83,9 +83,17 @@ build CMakeFiles\DataStruct.dir\src\chapter1\page27test.cpp.obj: CXX_COMPILER__D
 
 build CMakeFiles\DataStruct.dir\src\chapter1\stl.cpp.obj: CXX_COMPILER__DataStruct_unscanned_Debug E$:\Project\DataStruct\DataStruct\src\chapter1\stl.cpp || cmake_object_order_depends_target_DataStruct
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
-  INCLUDES = -IE:\Project\DataStruct\DataStruct\include -IE:\Project\DataStruct\DataStruct\include\chapter1 -IE:\Project\DataStruct\DataStruct\include\chapter2
+  INCLUDES = -IE:\Project\DataStruct\DataStruct\include
   OBJECT_DIR = CMakeFiles\DataStruct.dir
   OBJECT_FILE_DIR = CMakeFiles\DataStruct.dir\src\chapter1
+  TARGET_COMPILE_PDB = CMakeFiles\DataStruct.dir\
+  TARGET_PDB = DataStruct.pdb
+
+build CMakeFiles\DataStruct.dir\src\chapter2\Rectangle.cpp.obj: CXX_COMPILER__DataStruct_unscanned_Debug E$:\Project\DataStruct\DataStruct\src\chapter2\Rectangle.cpp || cmake_object_order_depends_target_DataStruct
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
+  INCLUDES = -IE:\Project\DataStruct\DataStruct\include
+  OBJECT_DIR = CMakeFiles\DataStruct.dir
+  OBJECT_FILE_DIR = CMakeFiles\DataStruct.dir\src\chapter2
   TARGET_COMPILE_PDB = CMakeFiles\DataStruct.dir\
   TARGET_PDB = DataStruct.pdb
 
@@ -97,7 +105,7 @@ build CMakeFiles\DataStruct.dir\src\chapter1\stl.cpp.obj: CXX_COMPILER__DataStru
 #############################################
 # Link the executable DataStruct.exe
 
-build DataStruct.exe: CXX_EXECUTABLE_LINKER__DataStruct_Debug CMakeFiles\DataStruct.dir\DataStruct.cpp.obj CMakeFiles\DataStruct.dir\src\chapter1\memoryTest.cpp.obj CMakeFiles\DataStruct.dir\src\chapter1\page20test.cpp.obj CMakeFiles\DataStruct.dir\src\chapter1\page27test.cpp.obj CMakeFiles\DataStruct.dir\src\chapter1\stl.cpp.obj
+build DataStruct.exe: CXX_EXECUTABLE_LINKER__DataStruct_Debug CMakeFiles\DataStruct.dir\DataStruct.cpp.obj CMakeFiles\DataStruct.dir\src\chapter1\memoryTest.cpp.obj CMakeFiles\DataStruct.dir\src\chapter1\page20test.cpp.obj CMakeFiles\DataStruct.dir\src\chapter1\page27test.cpp.obj CMakeFiles\DataStruct.dir\src\chapter1\stl.cpp.obj CMakeFiles\DataStruct.dir\src\chapter2\Rectangle.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

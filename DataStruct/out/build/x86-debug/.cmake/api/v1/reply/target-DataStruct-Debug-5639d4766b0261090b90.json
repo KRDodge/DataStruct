@@ -29,7 +29,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 26,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
@@ -41,7 +41,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 32,
+				"line" : 31,
 				"parent" : 0
 			}
 		]
@@ -60,14 +60,6 @@
 				{
 					"backtrace" : 2,
 					"path" : "E:/Project/DataStruct/DataStruct/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "E:/Project/DataStruct/DataStruct/include/chapter1"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "E:/Project/DataStruct/DataStruct/include/chapter2"
 				}
 			],
 			"language" : "CXX",
@@ -85,7 +77,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -126,7 +119,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -160,6 +154,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/chapter1/stl.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/chapter2/Rectangle.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
