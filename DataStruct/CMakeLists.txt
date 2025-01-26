@@ -16,7 +16,7 @@ include_directories(
 )
 
 # src/chapter1 디렉토리 내의 모든 소스 파일 포함
-file(GLOB_RECURSE CHAPTER1_SOURCES
+file(GLOB_RECURSE CHAPTER1_SOURCES CHAPTER2_SOURCES
     ${CMAKE_SOURCE_DIR}/src/*.cpp
 )
 

@@ -5,6 +5,7 @@
 #include "include/chapter1/page27test.h"
 #include "include/chapter1/stl.h"
 #include "include/chapter2/Rectangle.h"
+#include "include/chapter2/Currency.h"
 
 using namespace std;
 
@@ -27,7 +28,9 @@ int main()
 	//MagicSquare();
 	//SeqSearchTime();
 
-	CompareReferenceRectangle();
+	//CompareReferenceRectangle();
+	//GetMyRectangleCircumfrence();
+	 CalcCurrency();
 
 	return 0;
 }
