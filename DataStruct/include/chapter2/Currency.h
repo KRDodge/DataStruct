@@ -17,26 +17,11 @@ namespace Chapter2 {
 		Currency operator-(const float a);
 		Currency operator*(const float a);
 		friend ostream& operator<<(ostream& os, const Currency& c);
-		friend istream& operator>>(istream& os, const Currency& c);
+		friend istream& operator>>(istream& os, Currency& c);
 	private:
 		int dollar;
 		int cent;
 	};
-
-	ostream& operator<<(ostream& os, const Currency& c)
-	{
-		os << "$" << c.dollar << ".";
-		if (c.cent < 10)
-			os << "0";
-		os << c.cent;
-		return os;
-	}
-
-	istream& operator>>(istream& is, const Currency& c)
-	{
-		is >> c.dollar >> c.cent;
-		return is;
-	}
 
 	void CalcCurrency();
 }

@@ -1,6 +1,5 @@
 #include "chapter2/Rectangle.h"
 #include "chapter2/Currency.h"
-#include "chapter2/Currency.h"
 
 
 namespace Chapter2
@@ -13,8 +12,8 @@ namespace Chapter2
 
 	Currency::Currency(float cur)
 	{
-		dollar = (int)cur / 100;
-		cent = (int)cur % 100;
+		dollar = static_cast<int>(cur) / 100;
+		cent = static_cast<int>(cur) % 100;
 	}
 
 	Currency::Currency() : dollar(0), cent(0)
@@ -29,20 +28,20 @@ namespace Chapter2
 
 	Currency Currency::operator+(const float a)
 	{
-		int totalCents = dollar * 100 + cent + static_cast<int>(a * 100);
-		return Currency(totalCents / 100, totalCents % 100);
+		float totalCents = dollar * 100 + cent + a * 100;
+		return Currency(totalCents / 100, static_cast<int>(totalCents) % 100);
 	}
 
 	Currency Currency::operator-(const float a)
 	{
-		int totalCents = dollar * 100 + cent - static_cast<int>(a * 100);
-		return Currency(totalCents / 100, totalCents % 100);
+		float totalCents = dollar * 100 + cent - a * 100;
+		return Currency(totalCents / 100, static_cast<int>(totalCents) % 100);
 	}
 
 	Currency Currency::operator*(const float a)
 	{
-		int res = (dollar * 100 + cent) * -static_cast<int>(a * 100);
-		return Currency(res / 100, res % 100);
+		float res = (dollar * 100 + cent) * a * 100;
+		return Currency(res / 100, static_cast<int>(res) % 100);
 	}
 
 	void CalcCurrency()
@@ -53,7 +52,26 @@ namespace Chapter2
 		cin >> c;
 
 		cout << r * 2 << endl;
-		cout << &c - 2 << endl;
-		cout << &c + (5.5f) << endl;
+		cout << c - 2.5 << endl;
+		cout << c + 5.5 << endl;
+	}
+
+	ostream& operator<<(ostream& os, const Currency& c)
+	{
+		os << "$" << c.dollar << ".";
+		if (c.cent < 10)
+			os << "0";
+		os << c.cent;
+		return os;
+	}
+
+	istream& operator>>(istream& is, Currency& c)
+	{
+		float a;
+		is >> a;
+
+		c.dollar = static_cast<int>(a);
+		c.cent = static_cast<int>((a - c.dollar) * 100);
+		return is;
 	}
 }

@@ -80,7 +80,7 @@ namespace Chapter2
 	void GetMyRectangleCircumfrence()
 	{
 		MyRectangle r(0, 0, 100, 200);
-		cin >> r;
+		//cin >> &r;
 		cout << &r << endl;
 		cout << r.GetCircumfrence() << endl;
 	}
