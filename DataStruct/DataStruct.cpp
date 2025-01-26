@@ -6,6 +6,7 @@
 #include "include/chapter1/stl.h"
 #include "include/chapter2/Rectangle.h"
 #include "include/chapter2/Currency.h"
+#include "include/chapter2/GeneralArray.h"
 
 using namespace std;
 
@@ -30,7 +31,8 @@ int main()
 
 	//CompareReferenceRectangle();
 	//GetMyRectangleCircumfrence();
-	 CalcCurrency();
+	//CalcCurrency();
+	TestGeneralArray();
 
 	return 0;
 }
