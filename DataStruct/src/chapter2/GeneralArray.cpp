@@ -60,7 +60,7 @@ namespace Chapter2
 			os << arr.data[i];
 		return os;
 	}
-	
+
 	istream& operator>>(istream& is, GeneralArray& arr) {
 		is >> arr.size;
 		arr.data = new int[arr.size]();
