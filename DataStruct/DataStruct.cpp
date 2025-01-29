@@ -7,6 +7,8 @@
 #include "include/chapter2/Rectangle.h"
 #include "include/chapter2/Currency.h"
 #include "include/chapter2/GeneralArray.h"
+#include "include/chapter2/GeneralList.h"
+#include "include/chapter2/SparseMatrix.h"
 
 using namespace std;
 
@@ -32,7 +34,7 @@ int main()
 	//CompareReferenceRectangle();
 	//GetMyRectangleCircumfrence();
 	//CalcCurrency();
-	TestGeneralArray();
+	SparseMatrixInput();
 
 	return 0;
 }
