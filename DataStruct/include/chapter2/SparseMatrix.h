@@ -27,6 +27,9 @@ namespace Chapter2
 		SparseMatrix Transpose();
 		SparseMatrix FastTranspose();
 		void Insert(int index, MatrixTerm element);
+		void StoreSum(const int sum, const int r, const int c);
+		void ChangeSize1D(const int newSize);
+		SparseMatrix Multiply(SparseMatrix b);
 
 		friend ostream& operator<<(ostream& os, const SparseMatrix& matrix)
 		{
@@ -38,7 +41,7 @@ namespace Chapter2
 		}
 	private:
 		int rows, cols, terms, capacity;
-		MatrixTerm* smArray;
+		MatrixTerm* smArray;								
 	};
 
 	void SparseMatrixInput();

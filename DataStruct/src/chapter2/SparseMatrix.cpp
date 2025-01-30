@@ -50,16 +50,18 @@ namespace Chapter2
 		if (terms < 1)
 			return transposed;
 
-		int* rowSize = new int[cols];
 		int* rowStart = new int[cols];
 
-		fill(rowSize, rowSize + cols, 0);
+		fill(rowStart, rowStart + cols, 0);
 		for (int i = 0; i < terms; ++i)
-			rowSize[smArray[i].col]++;
+			rowStart[smArray[i].col]++;
 		
-		rowStart[0] = 0;
-		for (int i = 1; i < cols; ++i)
-			rowStart[i] = rowStart[i - 1] + rowSize[i - 1];
+		int sum = 0;
+		for (int i = 0; i < cols; ++i) {
+			int temp = rowStart[i];
+			rowStart[i] = sum;
+			sum += temp;
+		}
 
 		for(int i = 0; i < terms; ++i)
 		{
@@ -69,7 +71,6 @@ namespace Chapter2
 			transposed.smArray[j].value = smArray[i].value;
 			rowStart[smArray[i].col]++;
 		}
-		delete[] rowSize;
 		delete[] rowStart;
 
 		return transposed;
@@ -80,6 +81,91 @@ namespace Chapter2
 		if (index >= terms)
 			return;
 		smArray[index] = element;
+	}
+
+	void SparseMatrix::StoreSum(const int sum, const int r, const int c)
+	{
+		if (sum == 0)
+			return;
+
+		if (terms == capacity)
+			ChangeSize1D(2 * capacity);
+		smArray[terms].row = r;
+		smArray[terms].col = c;
+		smArray[terms++].value = sum;
+	}
+
+	void SparseMatrix::ChangeSize1D(const int newSize)
+	{
+		if (newSize < terms)
+			throw "New Size must be >= number of terms";
+		MatrixTerm* temp = new MatrixTerm[newSize];
+		copy(smArray, smArray + terms, temp);
+		delete[] smArray;
+		smArray = temp;
+		capacity = newSize;
+	}
+
+	SparseMatrix SparseMatrix::Multiply(SparseMatrix b)
+	{
+		if (cols != b.rows)
+			throw "tncompatible matrices";
+
+		SparseMatrix bXpose = b.FastTranspose();
+		SparseMatrix d(rows, b.cols, 0);
+		int currRowIndex = 0, currRowBegin = 0, currRowA = smArray[0].row;
+
+		if (terms == capacity)
+			ChangeSize1D(terms + 1);
+		bXpose.ChangeSize1D(terms + 1);
+		smArray[terms].row = rows;
+		bXpose.smArray[b.terms].row = b.cols;
+		bXpose.smArray[b.terms].col = -1;
+
+		int sum = 0;
+
+		while (currRowIndex < terms)
+		{
+			int currColB = bXpose.smArray[0].row;
+			int currColIndex = 0;
+
+			if (smArray[currRowIndex].row != currRowA)
+			{
+				d.StoreSum(sum, currRowA, currColB);
+				sum = 0;
+				currRowIndex = currRowBegin;
+				while (bXpose.smArray[currColIndex].row == currColB)
+					currColIndex++;
+				currColB = bXpose.smArray[currColIndex].row;
+			}
+			else if (bXpose.smArray[currColIndex].row != currColB)
+			{
+				d.StoreSum(sum, currRowA, currColB);
+				sum = 0;
+				currRowIndex = currRowBegin;
+				currColB = bXpose.smArray[currColIndex].row;
+			}
+			else
+			{
+				if (smArray[currRowIndex].col < bXpose.smArray[currColIndex].col)
+					currRowIndex++;
+				else if (smArray[currRowIndex].col == bXpose.smArray[currColIndex].col)
+				{
+					sum += smArray[currRowIndex].value * bXpose.smArray[currColIndex].value;
+					currRowIndex++;
+					currColIndex++;
+				}
+				else
+					currColIndex++;
+			}
+			
+			while (smArray[currRowIndex].row == currRowA)
+				currRowIndex++;
+
+			currRowBegin = currRowIndex;
+			currRowA = smArray[currRowIndex].row;
+		}
+		return d;
 	}
 
 	void SparseMatrixInput()
