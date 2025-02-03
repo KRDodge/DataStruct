@@ -9,6 +9,7 @@
 #include "include/chapter2/GeneralArray.h"
 #include "include/chapter2/GeneralList.h"
 #include "include/chapter2/SparseMatrix.h"
+#include "include/chapter2/CommonString.h"
 
 using namespace std;
 
@@ -34,7 +35,8 @@ int main()
 	//CompareReferenceRectangle();
 	//GetMyRectangleCircumfrence();
 	//CalcCurrency();
-	SparseMatrixInput();
+	//SparseMatrixInput();
+	StringInput();
 
 	return 0;
 }
