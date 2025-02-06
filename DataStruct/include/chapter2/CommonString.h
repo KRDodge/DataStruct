@@ -38,6 +38,7 @@ namespace Chapter2
 		}
 
 		int Find(CommonString pat);
+		void ComputeFailiureFunction(int* f, const char* pat);
 		int FastFind(CommonString pat);
 
 		void ReplaceSubstring(const char* w, const char* x);

@@ -86,28 +86,49 @@ namespace Chapter2
 		return -1;
 	}
 
+	void CommonString::ComputeFailiureFunction(int* f, const char* pat)
+	{
+		int lengthP = Length();
+		f[0] = -1;
+		for (int j = 1; j < lengthP; ++j)
+		{
+			int i = f[j - 1];
+			while ((*(string + j) != *(string + i + 1)) && (i >= 0))
+				i = f[i];
+			if (*(string + j) == *(string + i + 1))
+				f[j] = i + 1;
+			else
+				f[j] = -1;
+		}
+	}
+
 	int CommonString::FastFind(CommonString pat)
 	{
-		//int posP = 0, posS = 0;
-		//int lengthP = pat.Length(), lengthS = Length();
-		//while (posP < lengthP && posS < lengthS)
-		//{
-		//	if (pat.string[posP] == string[posS])
-		//	{
-		//		posP++; 
-		//		posS++;
-		//	}
-		//	else
-		//	{
-		//		if (posP == 0)
-		//			posS++;
-		//		else
-		//			posP = pat.f[posP - 1] + 1;
-		//	}
-		//	if (posP < lengthP)
-		//		return -1;
-		//	else return posS - lengthP;
-		//}
+		int posP = 0, posS = 0;
+		int lengthP = pat.Length(), lengthS = Length();
+
+		int* f = new int[lengthP];
+		pat.ComputeFailiureFunction(f, pat.string);
+
+		while (posP < lengthP && posS < lengthS)
+		{
+			if (pat.string[posP] == string[posS])
+			{
+				posP++; 
+				posS++;
+			}
+			else
+			{
+				if (posP == 0)
+					posS++;
+				else
+					posP = f[posP - 1] + 1;
+			}
+			if (posP < lengthP)
+				return -1;
+			else 
+				return posS - lengthP;
+		}
 		return 0;
 	}
 

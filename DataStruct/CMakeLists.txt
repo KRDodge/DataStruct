@@ -16,15 +16,21 @@ include_directories(
 )
 
 # src/chapter1 디렉토리 내의 모든 소스 파일 포함
-file(GLOB_RECURSE CHAPTER1_SOURCES CHAPTER2_SOURCES
+file(GLOB_RECURSE 
+CHAPTER1_SOURCES 
+CHAPTER2_SOURCES 
+CHAPTER3_SOURCES 
+CHAPTER4_SOURCES
     ${CMAKE_SOURCE_DIR}/src/*.cpp
 )
 
 # 프로젝트의 실행 파일 추가
 add_executable(${PROJECT_NAME}
     DataStruct.cpp   # main 함수가 있는 파일
-    ${CHAPTER1_SOURCES}  # chapter1 소스 파일들
-    ${CHAPTER2_SOURCES}  # chapter1 소스 파일들
+    ${CHAPTER1_SOURCES}
+    ${CHAPTER2_SOURCES}
+    ${CHAPTER3_SOURCES}
+    ${CHAPTER4_SOURCES}
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
