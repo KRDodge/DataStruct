@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "E:\\Project\\DataStruct\\DataStruct\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Project\\DataStruct\\DataStruct\\DataStruct.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataStruct.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Project\\DataStruct\\DataStruct\\DataStruct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataStruct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Project\\DataStruct\\DataStruct\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -21,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Project\\DataStruct\\DataStruct\\include\\chapter2\\CommonString.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\chapter2\\CommonString.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Project\\DataStruct\\DataStruct\\DataStruct.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataStruct.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Project\\DataStruct\\DataStruct\\DataStruct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataStruct.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Project\\DataStruct\\DataStruct\\include\\chapter2\\SparseMatrix.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -104,37 +104,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CMakeLists.txt",
               "DocumentMoniker": "E:\\Project\\DataStruct\\DataStruct\\CMakeLists.txt",
               "RelativeDocumentMoniker": "CMakeLists.txt",
               "ToolTip": "E:\\Project\\DataStruct\\DataStruct\\CMakeLists.txt",
               "RelativeToolTip": "CMakeLists.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2025-02-03T12:30:04.198Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Bag.cpp",
-              "DocumentMoniker": "E:\\Project\\DataStruct\\DataStruct\\src\\chapter3\\Bag.cpp",
-              "RelativeDocumentMoniker": "src\\chapter3\\Bag.cpp",
-              "ToolTip": "E:\\Project\\DataStruct\\DataStruct\\src\\chapter3\\Bag.cpp",
-              "RelativeToolTip": "src\\chapter3\\Bag.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-03T12:30:00.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Bag.h",
               "DocumentMoniker": "E:\\Project\\DataStruct\\DataStruct\\include\\chapter3\\Bag.h",
               "RelativeDocumentMoniker": "include\\chapter3\\Bag.h",
@@ -142,12 +129,11 @@
               "RelativeToolTip": "include\\chapter3\\Bag.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-03T07:32:01.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T07:32:01.526Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CommonString.cpp",
               "DocumentMoniker": "E:\\Project\\DataStruct\\DataStruct\\src\\chapter2\\CommonString.cpp",
               "RelativeDocumentMoniker": "src\\chapter2\\CommonString.cpp",
@@ -155,8 +141,7 @@
               "RelativeToolTip": "src\\chapter2\\CommonString.cpp",
               "ViewState": "AgIAAGMAAAAAAAAAAAAQwG0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-30T20:26:48.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T20:26:48.487Z"
             },
             {
               "$type": "Document",
@@ -168,8 +153,7 @@
               "RelativeToolTip": "include\\chapter2\\GeneralList.h",
               "ViewState": "AgIAACQAAAAAAAAAAAAAABcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T03:12:19.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-29T03:12:19.904Z"
             },
             {
               "$type": "Document",
@@ -181,8 +165,7 @@
               "RelativeToolTip": "include\\chapter2\\GeneralArray.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T03:11:35.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-29T03:11:35.39Z"
             },
             {
               "$type": "Document",
@@ -194,8 +177,7 @@
               "RelativeToolTip": "src\\chapter2\\GeneralArray.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-29T03:11:29.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-29T03:11:29.027Z"
             },
             {
               "$type": "Document",
@@ -207,8 +189,7 @@
               "RelativeToolTip": "src\\chapter1\\stl.cpp",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-24T10:54:37.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T10:54:37.55Z"
             },
             {
               "$type": "Document",
@@ -220,8 +201,7 @@
               "RelativeToolTip": "src\\chapter1\\page27test.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-24T10:54:35.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T10:54:35.267Z"
             },
             {
               "$type": "Document",
@@ -233,8 +213,7 @@
               "RelativeToolTip": "src\\chapter1\\page20test.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-24T10:54:32.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T10:54:32.719Z"
             },
             {
               "$type": "Document",
@@ -246,8 +225,7 @@
               "RelativeToolTip": "include\\chapter1\\stl.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-24T10:54:30.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T10:54:30.201Z"
             },
             {
               "$type": "Document",
@@ -259,12 +237,11 @@
               "RelativeToolTip": "include\\chapter1\\page27test.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-24T10:54:28.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T10:54:28.874Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "DataStruct.cpp",
               "DocumentMoniker": "E:\\Project\\DataStruct\\DataStruct\\DataStruct.cpp",
               "RelativeDocumentMoniker": "DataStruct.cpp",
@@ -285,12 +262,11 @@
               "RelativeToolTip": "include\\chapter2\\SparseMatrix.h",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAC4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T08:19:05.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-29T08:19:05.189Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "DataStruct.h",
               "DocumentMoniker": "E:\\Project\\DataStruct\\DataStruct\\DataStruct.h",
               "RelativeDocumentMoniker": "DataStruct.h",
@@ -303,7 +279,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "Bag.cpp",
+              "DocumentMoniker": "E:\\Project\\DataStruct\\DataStruct\\src\\chapter3\\Bag.cpp",
+              "RelativeDocumentMoniker": "src\\chapter3\\Bag.cpp",
+              "ToolTip": "E:\\Project\\DataStruct\\DataStruct\\src\\chapter3\\Bag.cpp",
+              "RelativeToolTip": "src\\chapter3\\Bag.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-03T12:30:00.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CommonString.h",
               "DocumentMoniker": "E:\\Project\\DataStruct\\DataStruct\\include\\chapter2\\CommonString.h",
               "RelativeDocumentMoniker": "include\\chapter2\\CommonString.h",
@@ -311,8 +299,7 @@
               "RelativeToolTip": "include\\chapter2\\CommonString.h",
               "ViewState": "AgIAABEAAAAAAAAAAAAewCgAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-30T20:23:53.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T20:23:53.873Z"
             },
             {
               "$type": "Document",
@@ -324,8 +311,7 @@
               "RelativeToolTip": "src\\chapter2\\SparseMatrix.cpp",
               "ViewState": "AgIAAJ8AAAAAAAAAAAAewKoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-29T08:18:56.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-29T08:18:56.967Z"
             },
             {
               "$type": "Document",
@@ -337,8 +323,7 @@
               "RelativeToolTip": "src\\chapter2\\GeneralList.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-29T03:12:20.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-29T03:12:20.758Z"
             },
             {
               "$type": "Document",
@@ -350,8 +335,7 @@
               "RelativeToolTip": "..\\..\\..\\Apps\\Visual Studio\\VC\\Tools\\MSVC\\14.41.34120\\include\\sal.h",
               "ViewState": "AgIAACAJAAAAAAAAAAAvwDgJAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T04:05:00.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-29T04:05:00.46Z"
             },
             {
               "$type": "Document",
@@ -363,8 +347,7 @@
               "RelativeToolTip": "src\\chapter2\\Rectangle.cpp",
               "ViewState": "AgIAACQAAAAAAAAAAAAewDsAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-24T11:44:00.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T11:44:00.503Z"
             },
             {
               "$type": "Document",
@@ -376,8 +359,7 @@
               "RelativeToolTip": "include\\chapter2\\Rectangle.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-24T11:45:03.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T11:45:03.908Z"
             },
             {
               "$type": "Document",
@@ -389,8 +371,7 @@
               "RelativeToolTip": "src\\chapter1\\memoryTest.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-24T10:54:12.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T10:54:12.321Z"
             },
             {
               "$type": "Document",
@@ -412,8 +393,7 @@
               "DocumentMoniker": "CMake \uAC1C\uC694 \uD398\uC774\uC9C0",
               "ToolTip": "CMake \uAC1C\uC694 \uD398\uC774\uC9C0",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-24T10:36:35.23Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-24T10:36:35.23Z"
             }
           ]
         }

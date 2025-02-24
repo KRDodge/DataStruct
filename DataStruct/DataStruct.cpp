@@ -10,6 +10,7 @@
 #include "include/chapter2/GeneralList.h"
 #include "include/chapter2/SparseMatrix.h"
 #include "include/chapter2/CommonString.h"
+#include "include/chapter3/Bag.h"
 
 using namespace std;
 
@@ -36,7 +37,9 @@ int main()
 	//GetMyRectangleCircumfrence();
 	//CalcCurrency();
 	//SparseMatrixInput();
-	StringInput();
+	//StringInput();
+
+	
 
 	return 0;
 }
