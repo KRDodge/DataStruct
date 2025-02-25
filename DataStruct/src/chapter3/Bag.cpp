@@ -1,67 +1,95 @@
 #include "chapter3/Bag.h"
 #include "chapter3/ChangeSize.h"
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
 namespace Chapter3
 {
-	Bag::Bag()
+	template <class T>
+	Bag<T>::Bag()
 	{
 
 	}
 
-	Bag::Bag(int bagCapacity) 
+	template <class T>
+	Bag<T>::Bag(int bagCapacity)
 		: capacity(bagCapacity)
 	{
 		if (capacity < 1)
-			throw "Capacity below 1";
+		{
+			cout << "Capacity below 1" << endl;
+			return;
+		}
 
-		array = new int[capacity];
-		top -= 1;
+		array = new T[capacity];
+		top = -1;
 	}
 
-	Bag::~Bag()
+	template <class T>
+	Bag<T>::~Bag()
 	{
 
 	}
 
-	int Bag::Size() const
+	template <class T>
+	int Bag<T>::Size() const
 	{
 		return top + 1;
 	}
 
-	bool Bag::IsEmpty() const
+	template <class T>
+	bool Bag<T>::IsEmpty() const
 	{
 		return Size() == 0;
 	}
 
-	int Bag::Element() const
+	template <class T>
+	T& Bag<T>::Element() const
 	{
 		if (IsEmpty())
 			throw "Bag is Empty";
+
 		return array[0];
 	}
 
-	void Bag::Push(const int p)
+	template <class T>
+	void Bag<T>::Push(const T& p)
 	{
 		if (capacity == top + 1)
+		{
 			ChangeSize1D(array, capacity, 2 * capacity);
-
-		capacity *= 2;
+			capacity *= 2;
+		}
 		array[++top] = p;
 	}
 
-	void Bag::Pop()
+	template <class T>
+	void Bag<T>::Pop()
 	{
 		if (IsEmpty())
-			throw "Bag is empty, cannot delete";
+		{
+			cout << "Bag is empty, cannot delete" << endl;
+			return;
+		}
 		int deletePos = top / 2;
 		copy(array + deletePos + 1, array + top + 1, array + deletePos);
-		top--;
+		array[top--].~T();
 	}
 
 	void ModifyBag()
 	{
+		Bag<int> bag(3);
+
+		bag.Push(10);
+		bag.Push(5);
+
+		cout << bag.Element() << endl;
+		bag.Pop();
+		cout << bag.Element() << endl;
+
+		bag.Pop();
+		bag.Pop();
 	}
 }

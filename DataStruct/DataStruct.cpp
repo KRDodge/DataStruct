@@ -16,6 +16,7 @@ using namespace std;
 
 using namespace Chapter1;
 using namespace Chapter2;
+using namespace Chapter3;
 
 int main()
 {
@@ -39,7 +40,7 @@ int main()
 	//SparseMatrixInput();
 	//StringInput();
 
-	
+	ModifyBag();
 
 	return 0;
 }

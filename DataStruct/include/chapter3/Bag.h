@@ -2,6 +2,7 @@
 
 namespace Chapter3
 {
+	template <class T>
 	class Bag
 	{
 	public:
@@ -11,12 +12,13 @@ namespace Chapter3
 
 		int Size() const;
 		bool IsEmpty() const;
-		int Element() const;
-		void Push(const int p);
+		T& Element() const;
+		
+		void Push(const T& p);
 		void Pop();
 
 	private:
-		int* array;
+		T* array;
 		int capacity;
 		int top;
 

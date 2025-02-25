@@ -401,3 +401,6 @@ FodyWeavers.xsd
 DataStruct/out/build/x86-debug
 *.ipch
 *.vsidx
+DataStruct/.vs/DataStruct/v17
+DataStruct/.vs
+DataStruct/out/build/x86-debug
