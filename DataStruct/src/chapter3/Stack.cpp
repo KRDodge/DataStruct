@@ -1,4 +1,4 @@
-#include "chapter3/Bag.h"
+#include "chapter3/Stack.h"
 #include "chapter3/ChangeSize.h"
 #include <algorithm>
 #include <iostream>
@@ -8,13 +8,13 @@ using namespace std;
 namespace Chapter3
 {
 	template <class T>
-	Bag<T>::Bag()
+	Stack<T>::Stack()
 	{
 
 	}
 
 	template <class T>
-	Bag<T>::Bag(int bagCapacity)
+	Stack<T>::Stack(int bagCapacity)
 		: capacity(bagCapacity)
 	{
 		if (capacity < 1)
@@ -28,34 +28,34 @@ namespace Chapter3
 	}
 
 	template <class T>
-	Bag<T>::~Bag()
+	Stack<T>::~Stack()
 	{
 
 	}
 
 	template <class T>
-	int Bag<T>::Size() const
+	int Stack<T>::Size() const
 	{
 		return top + 1;
 	}
 
 	template <class T>
-	bool Bag<T>::IsEmpty() const
+	bool Stack<T>::IsEmpty() const
 	{
 		return Size() == 0;
 	}
 
 	template <class T>
-	T& Bag<T>::Element() const
+	T& Stack<T>::Element() const
 	{
 		if (IsEmpty())
-			throw "Bag is Empty";
+			throw "Stack is Empty";
 
 		return array[0];
 	}
 
 	template <class T>
-	void Bag<T>::Push(const T& p)
+	void Stack<T>::Push(const T& p)
 	{
 		if (capacity == top + 1)
 		{
@@ -66,11 +66,11 @@ namespace Chapter3
 	}
 
 	template <class T>
-	void Bag<T>::Pop()
+	void Stack<T>::Pop()
 	{
 		if (IsEmpty())
 		{
-			cout << "Bag is empty, cannot delete" << endl;
+			cout << "Stack is empty, cannot delete" << endl;
 			return;
 		}
 		int deletePos = top / 2;
@@ -80,7 +80,7 @@ namespace Chapter3
 
 	void ModifyBag()
 	{
-		Bag<int> bag(3);
+		Stack<int> bag(3);
 
 		bag.Push(10);
 		bag.Push(5);

@@ -3,12 +3,12 @@
 namespace Chapter3
 {
 	template <class T>
-	class Bag
+	class Stack
 	{
 	public:
-		Bag();
-		Bag(int bagCapacity);
-		~Bag();
+		Stack();
+		Stack(int bagCapacity);
+		~Stack();
 
 		int Size() const;
 		bool IsEmpty() const;
