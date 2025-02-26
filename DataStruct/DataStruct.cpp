@@ -11,6 +11,7 @@
 #include "include/chapter2/SparseMatrix.h"
 #include "include/chapter2/CommonString.h"
 #include "include/chapter3/Stack.h"
+#include "include/chapter3/Queue.h"
 
 using namespace std;
 
@@ -40,7 +41,8 @@ int main()
 	//SparseMatrixInput();
 	//StringInput();
 
-	ModifyBag();
+	//ModifyBag();
+	ModifyQueue();
 
 	return 0;
 }
