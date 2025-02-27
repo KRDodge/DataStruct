@@ -29,6 +29,6 @@ namespace Chapter3
 		int capacity;
 	};
 
-	void ModifyDeDequeue();
+	void ModifyDequeue();
 }
 

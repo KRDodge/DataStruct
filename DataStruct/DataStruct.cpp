@@ -4,14 +4,17 @@
 #include "include/chapter1/page20test.h"
 #include "include/chapter1/page27test.h"
 #include "include/chapter1/stl.h"
+
 #include "include/chapter2/Rectangle.h"
 #include "include/chapter2/Currency.h"
 #include "include/chapter2/GeneralArray.h"
 #include "include/chapter2/GeneralList.h"
 #include "include/chapter2/SparseMatrix.h"
 #include "include/chapter2/CommonString.h"
+
 #include "include/chapter3/Stack.h"
 #include "include/chapter3/Queue.h"
+#include "include/chapter3/Dequeue.h"
 
 using namespace std;
 
@@ -42,7 +45,8 @@ int main()
 	//StringInput();
 
 	//ModifyBag();
-	ModifyQueue();
+	//ModifyQueue();
+	ModifyDequeue();
 
 	return 0;
 }

@@ -28,6 +28,8 @@ namespace Chapter3
 
 		void Split(Queue<T>& q1, Queue<T>& q2);
 
+		void Merge(const Queue<T>& q1, const Queue<T>& q2);
+
 	private:
 		T* queue;
 		int front;

@@ -85,7 +85,7 @@ namespace Chapter3
 		if (IsEmpty())
 			throw "queue is empty";
 
-		lastOp = Operation.Pop;
+		lastOp = Operation::Pop;
 		front = (front + 1) % capacity;
 		queue[front].~T();
 	}
@@ -110,12 +110,12 @@ namespace Chapter3
 		int half = Size() / 2;
 		int size = Size() - half;
 
-		for (int i = 0; i < size; i++)
+		for (int i = 0; i < half; i++)
 		{
 			q1.Push(queue[(front + 1 + i) % capacity]);
 		}
 
-		for (int i = size1; i < Size(); i++)
+		for (int i = size; i < Size(); i++)
 		{
 			q2.Push(queue[(front + 1 + i) % capacity]);
 		}
