@@ -23,7 +23,7 @@ namespace Chapter3
 			return;
 		}
 
-		array = new T[capacity];
+		array = new T[capacity]; 
 		top = -1;
 	}
 
@@ -52,6 +52,15 @@ namespace Chapter3
 			throw "Stack is Empty";
 
 		return array[0];
+	}
+
+	template <class T>
+	T& Stack<T>::Top() const
+	{
+		if (IsEmpty())
+			throw "Stack is Empty";
+
+		return array[top];
 	}
 
 	template <class T>
@@ -91,5 +100,56 @@ namespace Chapter3
 
 		bag.Pop();
 		bag.Pop();
+	}
+
+	void MazeDFS(const int m, const int p)
+	{
+		bool mark[100][100];
+		bool maze[100][100];
+		Offsets move[8];
+
+		mark[1][1] = 1;
+		Stack<Items> stack(m * p);
+
+		Items temp(1, 1, Direction::E);
+
+		stack.Push(temp);
+		while (!stack.IsEmpty())
+		{
+			temp = stack.Top();
+			stack.Pop();
+			int i = temp.x;
+			int j = temp.y;
+			int d = temp.dir;
+
+			while (d < 8)
+			{
+				int g = i + move[d].a;
+				int h = j + move[d].b;
+				if ((g == m) && (h == p))
+				{
+					cout << stack.Top() << endl;
+					cout << i << " " << j << endl;
+					cout << m << " " << p << endl;
+					return;
+				}
+				if (!maze[g][h] && !mark[g][h])
+				{
+					mark[g][h] = 1;
+					temp.x = i;
+					temp.y = j;
+					temp.dir = Direction(d + 1);
+					stack.Push(temp);
+
+					i = g;
+					j = h;
+					d = Direction::N;
+				}
+				else
+					d++;
+			}
+
+			cout << "No path" << endl;
+		}
 	}
 }
