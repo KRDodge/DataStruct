@@ -16,11 +16,14 @@
 #include "include/chapter3/Queue.h"
 #include "include/chapter3/Dequeue.h"
 
+#include "include/chapter4/Chain.h"
+
 using namespace std;
 
 using namespace Chapter1;
 using namespace Chapter2;
 using namespace Chapter3;
+using namespace Chapter4;
 
 int main()
 {
@@ -46,7 +49,7 @@ int main()
 
 	//ModifyBag();
 	//ModifyQueue();
-	ModifyDequeue();
+	//ModifyDequeue();
 
 	return 0;
 }
