@@ -51,5 +51,7 @@ int main()
 	//ModifyQueue();
 	//ModifyDequeue();
 
+	ModifyChain();
+
 	return 0;
 }
