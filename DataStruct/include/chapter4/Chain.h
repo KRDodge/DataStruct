@@ -16,6 +16,19 @@ namespace Chapter4
 		int Length();
 		void Delete(ChainNode<T>* x);
 		void Delete(ChainNode<T>* x, ChainNode<T>* y);
+
+		void InsertBack(const T& e);
+		void Concatenate(Chain<T>& b);
+		void Reverse();
+
+		T& Max();
+		T& Min();
+		T* ToArray();
+
+		T& Front();
+		T& Back();
+		T& Get(int index);
+		void Insert(const T& e, int index);
 		
 		template <class T>
 		friend ostream& operator<<(std::ostream& os, const Chain<T>& chain)
@@ -33,6 +46,7 @@ namespace Chapter4
 
 	private:
 		ChainNode<T>* first;
+		ChainNode<T>* last;
 	};
 
 	void ModifyChain();
