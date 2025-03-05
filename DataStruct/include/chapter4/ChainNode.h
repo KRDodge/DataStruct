@@ -12,7 +12,8 @@ namespace Chapter4
 	class ChainNode {
 		friend class Chain<T>;
 	public:
-		ChainNode(int element = 0, ChainNode<T>* next = 0)
+
+		ChainNode(T element = 0, ChainNode<T>* next = 0)
 		{
 			data = element;
 			link = next;

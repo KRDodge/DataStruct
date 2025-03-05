@@ -17,8 +17,7 @@
 #include "include/chapter3/Dequeue.h"
 
 #include "include/chapter4/Chain.h"
-
-using namespace std;
+#include "include/chapter4/Polynomial.h"
 
 using namespace Chapter1;
 using namespace Chapter2;
@@ -51,7 +50,8 @@ int main()
 	//ModifyQueue();
 	//ModifyDequeue();
 
-	ModifyChain();
+	//ModifyChain();
+	ChainPolyTest();
 
 	return 0;
 }
