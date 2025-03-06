@@ -14,18 +14,6 @@ namespace Chapter4
 	{
 	}
 
-	int Polynomial::Evaluate(int e)
-	{
-		int sum = 0;
-		Chain<Term>::ChainIterator it;
-		for (auto it = poly->begin(); it != poly->end(); it++)
-		{
-			sum += pow(e, it->exp) * it->coef;
-		}
-
-		return sum;
-	}
-
 	void ChainPolyTest()
 	{
 		Polynomial p1, p2;
@@ -36,6 +24,12 @@ namespace Chapter4
 		
 		Polynomial p3 = p1 + p2;
 
+		cout << p3.Evaluate(2) << endl;
+
+		p3 = p1 - p2;
+		cout << p3.Evaluate(2) << endl;
+
+		p3 = p1 * p2;
 		cout << p3.Evaluate(2) << endl;
 	}
 }

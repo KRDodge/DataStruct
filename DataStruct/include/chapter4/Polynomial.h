@@ -22,7 +22,8 @@ namespace Chapter4 {
 		Polynomial();
 		~Polynomial();
 
-		Polynomial operator+(const Polynomial& b) {
+		Polynomial operator+(const Polynomial& b) 
+		{
 			Term temp;
 			Chain<Term>::ChainIterator  ai = poly->begin();
 			Chain<Term>::ChainIterator  bi = b.poly->begin();
@@ -34,12 +35,10 @@ namespace Chapter4 {
 				if (ai->exp == bi->exp)
 				{
 					int sum = ai->coef + bi->coef;
-					if (sum)
-					{
+					if (sum != 0)
 						c.poly->InsertBack(temp.Set(sum, ai->exp));
-						ai++;
-						bi++;
-					}
+					ai++;
+					bi++;
 				}
 				else if (ai->exp < bi->exp)
 				{
@@ -69,10 +68,82 @@ namespace Chapter4 {
 
 		Polynomial operator-(const Polynomial& b) 
 		{
-			return Polynomial();
+			Term temp;
+			Chain<Term>::ChainIterator  ai = poly->begin();
+			Chain<Term>::ChainIterator  bi = b.poly->begin();
+
+			Polynomial c;
+
+			while (ai && bi)
+			{
+				if (ai->exp == bi->exp)
+				{
+					int subt = ai->coef - bi->coef;
+					if (subt != 0)
+						c.poly->InsertBack(temp.Set(subt, ai->exp));
+					ai++;
+					bi++;
+				}
+				else if (ai->exp < bi->exp)
+				{
+					c.poly->InsertBack(temp.Set(-(bi->coef), bi->exp));
+					bi++;
+				}
+				else
+				{
+					c.poly->InsertBack(temp.Set(ai->coef, ai->exp));
+					ai++;
+				}
+			}
+
+			while (ai)
+			{
+				c.poly->InsertBack(temp.Set(ai->coef, ai->exp));
+				ai++;
+			}
+
+			while (bi)
+			{
+				c.poly->InsertBack(temp.Set(bi->coef, bi->exp));
+				bi++;
+			}
+			return c;
 		}
 
-		int Evaluate(int e);
+		Polynomial operator*(const Polynomial& b) 
+		{
+			Term temp;
+			Chain<Term>::ChainIterator ai = poly->begin();
+			Chain<Term>::ChainIterator bi;
+
+			Polynomial c;
+
+			while (ai)
+			{
+				bi = b.poly->begin();
+				while (bi)
+				{
+					int coefMult = ai->coef * bi->coef;
+					int expMult = ai->coef + bi->coef;
+					c.poly->InsertBack(temp.Set(coefMult, expMult));
+					bi++;
+				}
+				ai++;
+			}
+			return c;
+		}
+
+		int Evaluate(int e)
+		{
+			int sum = 0;
+			Chain<Term>::ChainIterator it;
+			for (auto it = poly->begin(); it != poly->end(); it++)
+			{
+				sum += pow(e, it->exp) * it->coef;
+			}
+
+			return sum;
+		}
 
 		friend istream& operator>>(istream& is, Polynomial& p)
 		{
