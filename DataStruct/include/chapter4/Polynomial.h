@@ -1,6 +1,7 @@
 #pragma once
 #include "chapter4/Chain.h"
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -115,6 +116,7 @@ namespace Chapter4 {
 			Term temp;
 			Chain<Term>::ChainIterator ai = poly->begin();
 			Chain<Term>::ChainIterator bi;
+			map<int, int> terms;
 
 			Polynomial c;
 
@@ -125,11 +127,18 @@ namespace Chapter4 {
 				{
 					int coefMult = ai->coef * bi->coef;
 					int expMult = ai->coef + bi->coef;
-					c.poly->InsertBack(temp.Set(coefMult, expMult));
+					terms[expMult] += coefMult;
 					bi++;
-				}
+				}	
 				ai++;
 			}
+
+			for (const auto& term : terms)
+			{
+				if (term.second != 0)
+					c.poly->InsertBack(Term(term.second, term.first));
+			}
+
 			return c;
 		}
 
