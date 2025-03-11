@@ -26,9 +26,6 @@ namespace Chapter4
 	{
 
 		first = Copy(l.first);
-		GenListNode<T>* q = nullptr;
-
-		if()
 	}
 
 	template<class T>
@@ -46,7 +43,9 @@ namespace Chapter4
 
 			q->next = Copy(p->next);
 		}
+		return q;
 	}
+
 	template<class T>
 	void GenList<T>::Delete(GenListNode<T>* x)
 	{
