@@ -8,6 +8,13 @@ namespace Chapter5
 	template <class T>
 	Tree<T>::Tree()
 	{
+		root = nullptr;
+	}
+
+	template <class T>
+	Tree<T>::Tree(const Tree<T>& s)
+	{
+		root = Copy(s.root);
 	}
 
 	template <class T>
@@ -20,11 +27,8 @@ namespace Chapter5
 	{
 		if (!root)
 			root = x;
-		
-		TreeNode<T>* current = x;
-		bool inserted = false;
-		inserted = InsertEmpty(current, x);
-
+		else
+			InsertEmpty(root, x);
 	}
 
 	template<class T>
@@ -35,19 +39,49 @@ namespace Chapter5
 			t->leftChild = x;
 			return true;
 		}
-		else
-			InsertEmpty(t->leftChild);
-		
 		if (!t->rightChild)
 		{
 			t->rightChild = x;
 			return true;
 		}
 
-		if (InsertEmpty(t->rightChild))
+		if (InsertEmpty(t->leftChild, x))
 			return true;
 			
 		return InsertEmpty(t->rightChild, x);
+	}
+
+	template <class T>
+	int Tree<T>::Count()
+	{
+		return Count(root);
+	}
+
+	template <class T>
+	int Tree<T>::Count(TreeNode<T>* node)
+	{
+		if (!node)
+			return 0;
+		return 1 + Count(node->leftChild) + Count(node->rightChild);
+	}
+
+	template <class T>
+	void Tree<T>::SwapTree()
+	{
+		return SwapTree(root);
+	}
+
+	template <class T>
+	void Tree<T>::SwapTree(TreeNode<T>* node)
+	{
+		if (node->leftChild)
+			SwapTree(node->leftChild);
+		if (node->rightChild)
+			SwapTree(node->rightChild);
+
+		TreeNode<T>* temp = node->leftChild;
+		node->leftChild = node->rightChild;
+		node->rightChild = temp;
 	}
 
 	template<class T>
@@ -121,28 +155,53 @@ namespace Chapter5
 	}
 
 	template<class T>
-	void Tree<T>::LevelOrder()
+	void Tree<T>::Visit(TreeNode<T>* currentNode)
 	{
-		Queue<TreeNode<T>*> q;
-		TreeNode<T>* currentNode = root;
-		while (currentNode)
-		{
-			Visit(currentNode);
-			if (currentNode->leftChild)
-				q.Push(currentNode->leftChild);
-			if (currentNode->rightChild)
-				q.Push(currentNode->rightChild);
-
-			if (q.IsEmpty())
-				return;
-			currentNode = q.Front();
-			q.Pop();
-		}
+		cout << currentNode->data << " ";
 	}
 
 	template<class T>
-	void Tree<T>::Visit(TreeNode<T>* currentNode)
+	void Tree<T>::Copy(TreeNode<T>* originNode)
 	{
-		cout << currentNode->data << " " << endl;
+		if (!originNode)
+			return nullptr;
+		return new TreeNode<T>(
+			originNode->data,
+			Copy(originNode->leftChild),
+			Copy(originNode->rightChild));
+	}
+
+	template<class T>
+	void Tree<T>::Equal(TreeNode<T> *a, TreeNode<T> *b)
+	{
+		if ((!a) && (!b))
+			return true;
+		return (a && b
+			&& (a->data == b->data)
+			&& Equal(a->rightChild, b->rightChild)
+			&& Equal(a->leftChild, b->leftChild));
+	}
+
+	void TreeTest()
+	{
+		Tree<int> t;
+
+		t.Insert(new TreeNode<int>(1));
+		t.Insert(new TreeNode<int>(2));
+		t.Insert(new TreeNode<int>(3));
+		t.Insert(new TreeNode<int>(4));
+		t.Insert(new TreeNode<int>(5));
+		t.Insert(new TreeNode<int>(6));
+		t.Insert(new TreeNode<int>(7));
+
+		t.LevelOrder();
+		cout << endl;
+
+		t.Inorder();
+		cout << endl;
+
+		t.SwapTree();
+		t.LevelOrder();
+		cout << t.Count();
 	}
 }

@@ -1,94 +1,9 @@
 #include "chapter3/Queue.h"
-#include "chapter3/ChangeSize.h"
-#include <iostream>
 
 using namespace std;
 
 namespace Chapter3
 {
-	template <class T>
-	Queue<T>::Queue()
-	{
-
-	}
-
-	template <class T>
-	Queue<T>::Queue(int capacity) : capacity(capacity)
-	{
-		if (capacity < 1)
-			throw "Capacity cannot be less than 1";
-
-		lastOp = Operation::Pop;
-		queue = new T[capacity];
-		front = rear = 0;
-	}
-
-	template <class T>
-	Queue<T>::~Queue()
-	{
-		delete[] queue;
-	}
-	
-	template<class T>
-	bool Queue<T>::IsEmpty() const
-	{
-		return front == rear;
-	}
-
-	template<class T>
-	T& Queue<T>::Front() const
-	{
-		if (IsEmpty())
-			throw "queue is empty";
-
-		return queue[(front + 1) % capacity];
-	}
-
-	template<class T>
-	T& Queue<T>::Rear() const
-	{
-		if (IsEmpty())
-			throw "queue is empty";
-
-		return queue[rear];
-	}
-
-	template<class T>
-	void Queue<T>::Push(const T& x)
-	{
-		if ((rear + 1) % capacity == front)
-		{
-			T* newQueue = new T[2 * capacity];
-			int start = (front + 1) % capacity;
-			if (start < 2)
-				copy(queue + start, queue + start + capacity - 1, newQueue);
-			else
-			{
-				copy(queue + start, queue + capacity, newQueue);
-				copy(queue, queue + rear + 1, newQueue + capacity - start);
-			}
-			front = 2 * capacity - 1;
-			rear = capacity - 2;
-			capacity *= 2;
-			delete[] queue;
-			queue = newQueue;
-		}
-
-		lastOp = Operation::Push;
-		rear = (rear + 1) % capacity;
-		queue[rear] = x;
-	}
-
-	template<class T>
-	void Queue<T>::Pop()
-	{
-		if (IsEmpty())
-			throw "queue is empty";
-
-		lastOp = Operation::Pop;
-		front = (front + 1) % capacity;
-		queue[front].~T();
-	}
 
 	template<class T>
 	int Queue<T>::Capacity() const

@@ -19,10 +19,13 @@
 #include "include/chapter4/Chain.h"
 #include "include/chapter4/Polynomial.h"
 
+#include "include/chapter5/Tree.h"
+
 using namespace Chapter1;
 using namespace Chapter2;
 using namespace Chapter3;
 using namespace Chapter4;
+using namespace Chapter5;
 
 int main()
 {
@@ -51,7 +54,9 @@ int main()
 	//ModifyDequeue();
 
 	//ModifyChain();
-	ChainPolyTest();
+	//ChainPolyTest();
+
+	TreeTest();
 
 	return 0;
 }
