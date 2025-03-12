@@ -4,7 +4,7 @@
 namespace Chapter5
 {
 	template <class T>
-	MaxHeap<T>::MaxHeap(int _capacity = 10)
+	MinHeap<T>::MinHeap(int _capacity = 10)
 	{
 		if (_capacity < 1)
 			throw "capacity must be more than 0";
@@ -15,13 +15,13 @@ namespace Chapter5
 	}
 
 	template <class T>
-	bool MaxHeap<T>::IsEmpty() const
+	bool MinHeap<T>::IsEmpty() const
 	{
 		return heapSize == 0;
 	}
 
 	template <class T>
-	void MaxHeap<T>::Push(const T& e)
+	void MinHeap<T>::Push(const T& e)
 	{
 		if (heapSize == capacity)
 		{
@@ -29,7 +29,7 @@ namespace Chapter5
 			capacity *= 2;
 		}
 		int currentNode = ++heapSize;
-		while (currentNode != 1 && heap[currentNode / 2] < e)
+		while (currentNode != 1 && heap[currentNode / 2] > e)
 		{
 			heap[currentNode] = heap[currentNode / 2];
 			currentNode /= 2;
@@ -38,7 +38,7 @@ namespace Chapter5
 	}
 
 	template <class T>
-	void MaxHeap<T>::Pop()
+	void MinHeap<T>::Pop()
 	{
 		if (IsEmpty())
 			throw "Heap is Empty";
@@ -49,10 +49,10 @@ namespace Chapter5
 		int child = 2;
 		while (child <= heapSize)
 		{
-			if (child < heapSize && heap[child] < heap[child + 1])
+			if (child < heapSize && heap[child] > heap[child + 1])
 				child++;
 
-			if (lastE >= heap[child])
+			if (lastE <= heap[child])
 				break;
 
 			heap[currentNode] = heap[child];
