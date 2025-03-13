@@ -4,20 +4,24 @@
 namespace Chapter5
 {
 	template <class T>
-	class MaxHeap : MaxPQ
+	class MaxHeap : MaxPQ<T>
 	{
 	public:
 		MaxHeap(int capacity = 10);
 		~MaxHeap();
 
 		bool IsEmpty() const override;
-		const T& Top() override;
+		const T& Top() const override;
 		void Pop() override;
 		void Push(const T& p) override;
+
+		void LevelOrder();
 
 	private:
 		T* heap;
 		int heapSize;
 		int capacity;
 	};
+
+	void MaxHeapTest();
 }

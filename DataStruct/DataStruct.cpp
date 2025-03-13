@@ -20,6 +20,8 @@
 #include "include/chapter4/Polynomial.h"
 
 #include "include/chapter5/Tree.h"
+#include "include/chapter5/MaxHeap.h"
+#include "include/chapter5/MinHeap.h"
 
 using namespace Chapter1;
 using namespace Chapter2;
@@ -56,7 +58,9 @@ int main()
 	//ModifyChain();
 	//ChainPolyTest();
 
-	TreeTest();
+	//TreeTest();
+	MaxHeapTest();
+	MinHeapTest();
 
 	return 0;
 }
