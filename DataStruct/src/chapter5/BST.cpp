@@ -9,7 +9,7 @@ namespace Chapter5
 	}
 
 	template<class K, class E>
-	pair<K, E> BST<K, E>::Get(const K& k) const
+	pair<K, E>* BST<K, E>::Get(const K& k) const
 	{
 		Get(root, k);
 	}
@@ -102,7 +102,7 @@ namespace Chapter5
 	}
 
 	template<class K, class E>
-	pair<K, E>* BST<K, E>::Get(TreeNode<pair<K, E>>* p, const K& k)
+	pair<K, E>* BST<K, E>::Get(TreeNode<pair<K, E>>** p, const K& k)
 	{
 		TreeNode<pair<K, E>>* currentNode = root;
 		while (currentNode)
@@ -113,7 +113,7 @@ namespace Chapter5
 				currentNode = currentNode->rightChild;
 			else return &p->data;
 		}
-		return 0;
+		return nullptr;
 	}
 
 	template<class K, class E>
@@ -133,7 +133,7 @@ namespace Chapter5
 
 		while (currentNode)
 		{
-			if (k < currentNode->data, first)
+			if (k < currentNode->data.first)
 			{
 				b->leftChild = currentNode;
 				b = currentNode;
