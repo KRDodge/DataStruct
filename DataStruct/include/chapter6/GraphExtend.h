@@ -13,6 +13,7 @@ namespace Chapter6
 		bool ExistsEdge(int u, int v) const override;
 		void InsertVertex(int v) override;
 		void InsertEdge(int u, int v)  override;
+		void InsertEdge(int u, int v, int weight);
 		void DeleteVertex(int v) override;
 		void DeleteEdge(int u, int v) override;
 
@@ -31,8 +32,11 @@ namespace Chapter6
 		int NumberOfVertices() const { return n; }
 		int NumberOfEdges() const { return e; }
 
+		int** Kruskal();
+		int** Prim();
+
 	private:
-		bool** adjMatrix;
+		int** adjMatrix;
 	};
 
 	void TestGraph();
