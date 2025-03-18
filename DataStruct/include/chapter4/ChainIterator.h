@@ -13,8 +13,8 @@ namespace Chapter4
     public:
         ChainIterator(ChainNode<T>* startNode = nullptr) : current(startNode) {}
 
-        T& operator*() const { return current->data; }
-        T* operator->() const { return &(current->data); } // 🔥 올바른 포인터 반환
+        T& operator*() const { return *current; }
+        T* operator->() const { return &(current->data); }
 
         ChainIterator& operator++()
         {
@@ -43,6 +43,8 @@ namespace Chapter4
         {
             return current != nullptr;
         }
+
+        ChainNode<T>* GetNode() const { return current; }
 
     private:
         ChainNode<T>* current;

@@ -12,12 +12,8 @@ namespace Chapter4
 	class ChainNode {
 		friend class Chain<T>;
 	public:
-
-		ChainNode(T element = 0, ChainNode<T>* next = 0)
-		{
-			data = element;
-			link = next;
-		}
+		ChainNode(const T& element, ChainNode<T>* next = nullptr)
+			: data(element), link(next) {}
 		~ChainNode()
 		{
 			delete link;

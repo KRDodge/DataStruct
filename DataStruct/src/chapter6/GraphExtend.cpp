@@ -272,18 +272,21 @@ namespace Chapter6
 			mstSet[i] = false;
 		}
 
-		key[0] = 0;
+		key[0] = 0; //0번째 정점 선택
 		parent[0] = -1;
 
-		for (i = 0; i < n - 1; i++) {
-			int u = -1, minKey = INT_MAX;
+		for (i = 0; i < n - 1; i++) 
+		{
+			int u = -1;
+			int minKey = INT_MAX;
 			for (j = 0; j < n; j++)
+			{
 				if (!mstSet[j] && key[j] < minKey)
 				{
 					minKey = key[j];
 					u = j;
 				}
-
+			}
 			mstSet[u] = true;
 
 			for (j = 0; j < n; j++)
@@ -314,6 +317,15 @@ namespace Chapter6
 	void TestGraph()
 	{
 		GraphExtend g(10);
-		g.DeleteVertex(10);
+		g.InsertVertex(1);
+		g.InsertVertex(2);
+		g.InsertVertex(3);
+		g.InsertVertex(4);
+		g.InsertVertex(5);
+		g.InsertVertex(6);
+		g.InsertEdge(1, 2, 1);
+		g.InsertEdge(1, 3, 2);
+		g.InsertEdge(1, 4, 3);
+		g.InsertEdge(4, 5, 4);
 	}
 }

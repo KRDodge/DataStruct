@@ -23,11 +23,14 @@
 #include "include/chapter5/MaxHeap.h"
 #include "include/chapter5/MinHeap.h"
 
+#include "include/chapter6/GraphExtend.h"
+
 using namespace Chapter1;
 using namespace Chapter2;
 using namespace Chapter3;
 using namespace Chapter4;
 using namespace Chapter5;
+using namespace Chapter6;
 
 int main()
 {
@@ -59,8 +62,10 @@ int main()
 	//ChainPolyTest();
 
 	//TreeTest();
-	MaxHeapTest();
-	MinHeapTest();
+	//MaxHeapTest();
+	//MinHeapTest();
+
+	TestGraph();
 
 	return 0;
 }
