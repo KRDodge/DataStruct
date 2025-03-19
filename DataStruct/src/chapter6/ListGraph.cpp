@@ -27,7 +27,8 @@ namespace Chapter6
 
 	bool ListGraph::ExistsEdge(int u, int v) const
 	{
-		for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) {
+		for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) 
+		{
 			if (it->data.vertex == v) 
 				return true;
 		}
@@ -55,8 +56,10 @@ namespace Chapter6
 	void ListGraph::DeleteVertex(int v)
 	{
 		auto it = adjList[v].begin();
-		while (it != adjList[v].end()) {
-			if (it->data.vertex == v) {
+		while (it != adjList[v].end()) 
+		{
+			if (it->data.vertex == v) 
+			{
 				adjList[v].Delete(it.GetNode());
 				e--;
 				break;
@@ -69,8 +72,10 @@ namespace Chapter6
 	{
 		auto it = adjList[u].begin();
 		auto prev = adjList[u].begin();
-		while (it != adjList[u].end()) {
-			if (it->data.vertex == v) {
+		while (it != adjList[u].end()) 
+		{
+			if (it->data.vertex == v) 
+			{
 				adjList[u].Delete(it.GetNode());
 				e--;
 				break;
@@ -96,9 +101,11 @@ namespace Chapter6
 	void ListGraph::DFS(const int v)
 	{
 		visited[v] = true;
-		for (auto it = adjList[v].begin(); it != adjList[v].end(); ++it) {
+		for (auto it = adjList[v].begin(); it != adjList[v].end(); ++it) 
+		{
 			int next = it->data.vertex;
-			if (!visited[next]) {
+			if (!visited[next]) 
+			{
 				DFS(next);
 			}
 		}
@@ -111,9 +118,12 @@ namespace Chapter6
 		queue<int> q;
 		visited[v] = true;
 		q.push(v);
-		while (!q.empty()) {
-			int cur = q.front(); q.pop();
-			for (auto it = adjList[cur].begin(); it != adjList[cur].end(); ++it) {
+		while (!q.empty()) 
+		{
+			int cur = q.front(); 
+			q.pop();
+			for (auto it = adjList[cur].begin(); it != adjList[cur].end(); ++it) 
+			{
 				int next = it->data.vertex;
 				if (!visited[next]) {
 					visited[next] = true;
@@ -139,14 +149,17 @@ namespace Chapter6
 	void ListGraph::DfnLow(const int u, const int v)
 	{
 		dfn[u] = low[u] = num++;
-		for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) {
+		for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) 
+		{
 			int next = it->data.vertex;
 			if (next == v) continue;
-			if (dfn[next] == 0) {
+			if (dfn[next] == 0) 
+			{
 				DfnLow(next, u);
 				low[u] = min(low[u], low[next]);
 			}
-			else {
+			else 
+			{
 				low[u] = min(low[u], dfn[next]);
 			}
 		}
@@ -179,11 +192,14 @@ namespace Chapter6
 		int* to = new int[e];
 		int* weight = new int[e];
 
-		for (int i = 0; i < n; ++i) {
-			for (auto it = adjList[i].begin(); it != adjList[i].end(); ++it) {
+		for (int i = 0; i < n; ++i) 
+		{
+			for (auto it = adjList[i].begin(); it != adjList[i].end(); ++it) 
+			{
 				int u = i, v = it->data.vertex;
 				int w = it->data.weight;
-				if (u < v) { // 중복 방지
+				if (u < v) // 중복 방지
+				{ 
 					from[edgeCount] = u;
 					to[edgeCount] = v;
 					weight[edgeCount] = w;
@@ -210,7 +226,8 @@ namespace Chapter6
 			mstEdges[i] = new int[3];
 
 		int count = 0;
-		for (i = 0; i < edgeCount; i++) {
+		for (i = 0; i < edgeCount; i++) 
+		{
 			int idx = indices[i];
 			int rootU = from[idx];
 			int rootV = to[idx];
@@ -220,7 +237,8 @@ namespace Chapter6
 			while (parent[rootV] != rootV)
 				rootV = parent[rootV];
 
-			if (rootU != rootV) {
+			if (rootU != rootV) 
+			{
 				parent[rootU] = rootV;
 				mstEdges[count][0] = from[idx];
 				mstEdges[count][1] = to[idx];
@@ -245,7 +263,8 @@ namespace Chapter6
 		int* key = new int[n];
 		bool* mstSet = new bool[n];
 
-		for (int i = 0; i < n; ++i) {
+		for (int i = 0; i < n; ++i) 
+		{
 			key[i] = INT_MAX;
 			mstSet[i] = false;
 		}
@@ -257,8 +276,10 @@ namespace Chapter6
 		{
 			int minKey = INT_MAX;
 			int u = -1;
-			for (int v = 0; v < n; ++v) {
-				if (!mstSet[v] && key[v] < minKey) {
+			for (int v = 0; v < n; ++v) 
+			{
+				if (!mstSet[v] && key[v] < minKey) 
+				{
 					minKey = key[v];
 					u = v;
 				}
@@ -267,10 +288,12 @@ namespace Chapter6
 				break;
 			mstSet[u] = true;
 
-			for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) {
+			for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) 
+			{
 				int v = it->data.vertex;
 				int weight = it->data.weight;
-				if (!mstSet[v] && weight < key[v]) {
+				if (!mstSet[v] && weight < key[v]) 
+				{
 					parent[v] = u;
 					key[v] = weight;
 				}
@@ -281,8 +304,10 @@ namespace Chapter6
 			mstEdges[i] = new int[3];
 
 		int edgeIdx = 0;
-		for (int i = 1; i < n; ++i) {
-			if (parent[i] != -1) {
+		for (int i = 1; i < n; ++i) 
+		{
+			if (parent[i] != -1) 
+			{
 				mstEdges[edgeIdx][0] = parent[i];
 				mstEdges[edgeIdx][1] = i;
 				mstEdges[edgeIdx][2] = key[i];
@@ -305,25 +330,30 @@ namespace Chapter6
 			dist[i] = INF;
 		dist[0] = 0; //시작점을 0으로 잡기
 
-		for (int iter = 0; iter < n - 1; ++iter) {
-			for (int u = 0; u < n; ++u) {
-				for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) {
+		for (int iter = 0; iter < n - 1; ++iter) 
+		{
+			for (int u = 0; u < n; ++u) 
+			{
+				for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) 
+				{
 					int v = it->data.vertex;
 					int w = it->data.weight;
-					if (dist[u] != INF && dist[u] + w < dist[v]) {
+					if (dist[u] != INF && dist[u] + w < dist[v]) 
+					{
 						dist[v] = dist[u] + w;
 					}
 				}
 			}
 		}
 
-		for (int u = 0; u < n; ++u) {
-			for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) {
+		for (int u = 0; u < n; ++u) 
+		{
+			for (auto it = adjList[u].begin(); it != adjList[u].end(); ++it) 
+			{
 				int v = it->data.vertex;
 				int w = it->data.weight;
-				if (dist[u] != INF && dist[u] + w < dist[v]) {
+				if (dist[u] != INF && dist[u] + w < dist[v])
 					return nullptr;
-				}
 			}
 		}
 
