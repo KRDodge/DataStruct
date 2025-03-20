@@ -27,6 +27,9 @@ namespace Chapter7
 		void MergePass(T* initList, T* resultList, const int n, const int s);
 		void Merge(T* initList, T* mergedList, const int l, const int m, const int n);
 
+		int rMergeSort(T* a, int* link, const int left, const int right);
+		int ListMerge(T* a, int* link, const int start1, const int start2);
+
 	private:
 		list<T>* d; //이제 list 쓰자 vector는 위치 교환 및 삽입 연산 여러번 일어나서 비효율적
 	};
