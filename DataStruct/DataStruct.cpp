@@ -25,12 +25,15 @@
 
 #include "include/chapter6/GraphExtend.h"
 
+#include "include/chapter7/Sort.h"
+
 using namespace Chapter1;
 using namespace Chapter2;
 using namespace Chapter3;
 using namespace Chapter4;
 using namespace Chapter5;
 using namespace Chapter6;
+using namespace Chapter7;
 
 int main()
 {
@@ -65,7 +68,9 @@ int main()
 	//MaxHeapTest();
 	//MinHeapTest();
 
-	TestGraph();
+	//TestGraph();
+
+	TestSort();
 
 	return 0;
 }
