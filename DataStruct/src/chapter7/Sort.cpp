@@ -195,6 +195,81 @@ namespace Chapter7
 		a[j / 2] = e;
 	}
 
+	template<class T>
+	int Sort<T>::RadixSort(T* a, int* link, const int d, const int r, const int n)
+	{
+		int e[r], f[r];
+
+		int first = 1;
+		for (int i = 1; i < n; ++i)
+			link[i] = i + 1;
+
+		for (int i = d - 1; i >= 0; --i)
+		{
+			fill(f, f + r, 0);
+			for (int current = first; current; current = link[current])
+			{
+				int k = Digit(a[current], i);
+				if (f[k] == 0)
+					f[k] = current;
+				else
+					link[e[k]] = current;
+				e[k] = current;
+			}
+			int j = 0;
+			while (j < r && !f[j])
+				++j;
+
+			first = f[j];
+			int last = e[j];
+			++j;
+			while (j < r)
+			{
+				if (f[j])
+				{
+					link[last] = f[j];
+					last = e[j];
+				}
+				++j;
+			}
+			link[last] = 0;
+		}
+		return first;
+	}
+
+	template<class T>
+	int Sort<T>::Digit(int number, int pos)
+	{
+		for (int i = 1; i < pos; ++i)
+			number /= 10;
+		return return % 10;
+	}
+
+	template<class T>
+	void Sort<T>::List1(T* a, int* linka, const int n, int first)
+	{
+		int* linkb = new int[n];
+		int prev = 0;
+		for (int current = first; current; current = linka[current])
+		{
+			linkb[current] = prev;
+			prev = current;
+		}
+		for (int i = 1; i < n; ++i)
+		{
+			if (first != i)
+			{
+				if (linka[i])
+					linkb[linka[i]] = first;
+				linka[linkb[i] = first;
+				swap(a[first], a[i]);
+				swap(linka[first], linka[i]);
+				swap(linkb[first], linkb[i]);
+			}
+			first = linka[i];
+		}
+	}
+
 
 	template<class T>
 	void Sort<T>::MergePass(T* initList, T* resultList, const int n, const int s)
@@ -242,7 +317,7 @@ namespace Chapter7
 		cout << endl;
 		//sort.QuickSort(a, 0, 9);
 		//sort.InsertionSort(a, 10);
-		sort.MergeSort(a, 10);
+		//sort.MergeSort(a, 10);
 		for (int i = 0; i < n; ++i)
 			cout << a[i] << " ";
 
