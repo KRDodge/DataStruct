@@ -184,9 +184,10 @@ namespace Chapter7
 	void Sort<T>::Adjust(T* a, const int root, const int n)
 	{
 		T e = a[root];
-		for(int j = 2*root; j <= n;j *=2)
+		int j;
+		for(j = 2*root; j <= n;j *=2)
 		{
-			if (j < n && a[i] < a[j + 1])
+			if (j < n && a[j] < a[j + 1])
 				j++;
 			if (e >= a[j])
 				break;
@@ -242,7 +243,20 @@ namespace Chapter7
 	{
 		for (int i = 1; i < pos; ++i)
 			number /= 10;
-		return return % 10;
+		return number % 10;
+	}
+
+	template<class T>
+	void Sort<T>::BubbleSort(T* a, const int n)
+	{
+		for (int i = 0; i < n - 1; ++i)
+		{
+			for (int j = 0; j < n - i - 1; ++j)
+			{
+				if (a[j] > a[j + 1])
+					swap(a[j], a[j + 1]);
+			}
+		}
 	}
 
 	template<class T>
@@ -261,12 +275,52 @@ namespace Chapter7
 			{
 				if (linka[i])
 					linkb[linka[i]] = first;
-				linka[linkb[i] = first;
+				linka[linkb[i]] = first;
 				swap(a[first], a[i]);
 				swap(linka[first], linka[i]);
 				swap(linkb[first], linkb[i]);
 			}
 			first = linka[i];
+		}
+	}
+
+	template<class T>
+	void Sort<T>::List2(T* a, int* linka, const int n, int first)
+	{
+		for (int i = 1; i < n; ++i)
+		{
+			int q;
+			while (first < i)
+			{
+				first = linka[first];
+				q = linka[first];
+				if (first != i)
+					swap(a[i], a[first]);
+				linka[first] = linka[i];
+				linka[i] = first;
+			}
+			first = q;
+		}
+	}
+
+	template<class T>
+	void Sort<T>::Table(T* a, const int n, int* t)
+	{
+		for (int i = 1; i < n; ++i)
+		{
+			if (t[i] != i)
+			{
+				T p = a[i];
+				int j = i;
+				while (t[j] != i)
+				{
+					int k = t[j];
+					a[j] = a[k];
+					t[j] = j;
+				}
+				a[j] = p;
+				t[j] = j;
+			}
 		}
 	}
 

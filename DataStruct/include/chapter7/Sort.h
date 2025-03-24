@@ -35,8 +35,12 @@ namespace Chapter7
 
 		int RadixSort(T* a, int* link, const int d, const int r, const int n);
 		int Digit(int number, int pos);
+		
+		void BubbleSort(T* a, const int n);
 
 		void List1(T* a, int* linka, const int n, int first);
+		void List2(T* a, int* linka, const int n, int first);
+		void Table(T* a, const int n, int* t);
 
 	private:
 		list<T>* d; //이제 list 쓰자 vector는 위치 교환 및 삽입 연산 여러번 일어나서 비효율적
