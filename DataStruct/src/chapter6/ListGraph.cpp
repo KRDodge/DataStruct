@@ -330,7 +330,7 @@ namespace Chapter6
 			dist[i] = INF;
 		dist[0] = 0; //시작점을 0으로 잡기
 
-		for (int iter = 0; iter < n - 1; ++iter) 
+		for (int i = 0; i < n - 1; ++i) 
 		{
 			for (int u = 0; u < n; ++u) 
 			{

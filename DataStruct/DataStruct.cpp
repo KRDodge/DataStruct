@@ -27,6 +27,8 @@
 
 #include "include/chapter7/Sort.h"
 
+#include "include/chapter9/LeftistTree.h"
+
 using namespace Chapter1;
 using namespace Chapter2;
 using namespace Chapter3;
@@ -34,6 +36,7 @@ using namespace Chapter4;
 using namespace Chapter5;
 using namespace Chapter6;
 using namespace Chapter7;
+using namespace Chapter9;
 
 int main()
 {
@@ -70,7 +73,9 @@ int main()
 
 	//TestGraph();
 
-	TestSort();
+	//TestSort();
+
+	TestLeftistTree();
 
 	return 0;
 }

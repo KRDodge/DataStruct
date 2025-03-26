@@ -3,10 +3,10 @@
 namespace Chapter5
 {
 	template <class T>
-	class MaxPQ 
+	class MinPQ
 	{
 	public:
-		virtual ~MaxPQ() {}
+		virtual ~MinPQ() {}
 		virtual bool IsEmpty() const = 0;
 		virtual const T& Top() const = 0;
 		virtual void Push(const T&) = 0;

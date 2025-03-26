@@ -90,7 +90,7 @@ namespace Chapter8
 		for (int i = 0; i < length; i += 2)
 		{
 			answer += s.at(i);
-			answer += ((int)s.at(i + 1)) << 8;4
+			answer += ((int)s.at(i + 1)) << 8;
 		}
 		return answer;
 	}
