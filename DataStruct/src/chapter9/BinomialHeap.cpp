@@ -80,7 +80,7 @@ namespace Chapter9
 	}
 
 	template<class T>
-	void BinomialHeap<T>::Meld(BionomialHeap<T>* b)
+	void BinomialHeap<T>::Meld(BinomialHeap<T>* b)
 	{
 		if (min == nullptr) 
 		{

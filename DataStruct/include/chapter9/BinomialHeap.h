@@ -32,7 +32,7 @@ namespace Chapter9
 		const T& Min() const;
 		void Insert(const T&);
 		T& DeleteMin();
-		void Meld(BionomialHeap<T>*);
+		void Meld(BinomialHeap<T>*);
 
 	private:
 		BinomialNode<T>* min;
