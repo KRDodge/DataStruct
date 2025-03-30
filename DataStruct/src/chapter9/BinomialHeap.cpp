@@ -40,7 +40,7 @@ namespace Chapter9
 	}
 
 	template<class T>
-	void BinomialHeap<T>::Insert(const T&)
+	void BinomialHeap<T>::Insert(const T& d)
 	{
 		BinomialNode<T>* node = new BinomialNode<T>{ d, nullptr, nullptr, 0 };
 		BinomialHeap<T> temp(node);
@@ -84,8 +84,8 @@ namespace Chapter9
 	{
 		if (min == nullptr) 
 		{
-			min = b->min;
-			b->min = nullptr;
+			min = b->GetMin();
+			b->Initialize();
 			return;
 		}
 
@@ -109,9 +109,9 @@ namespace Chapter9
 		if (h1)
 			*pos = h1;
 		else
-			*pos = h2
+			*pos = h2;
 
 		min = newHead;
-		b->min = nullptr;
+		b->Initialize();
 	}
 }

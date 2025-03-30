@@ -7,10 +7,12 @@ using namespace std;
 
 namespace Chapter9
 {
+	template <class T> class BinomialHeap;
+
 	template <class T>
 	class BinomialNode
 	{
-		friend class BinomialTree<T>;
+		friend class BinomialHeap<T>;
 	private:
 		T data;
 		BinomialNode<T>* child;
@@ -19,10 +21,10 @@ namespace Chapter9
 	};
 
 	template <class T>
-	class BinomialHeap :public MinPQ<T>
+	class BinomialHeap : public MinPQ<T>
 	{
 	public:
-		BinomialHeap(BinmialNode<T>* init = nullptr) : min(init) {};
+		BinomialHeap(BinomialNode<T>* init = nullptr) : min(init) {};
 
 		bool IsEmpty() const override;
 		const T& Top() const override;
@@ -33,6 +35,8 @@ namespace Chapter9
 		void Insert(const T&);
 		T& DeleteMin();
 		void Meld(BinomialHeap<T>*);
+		void Initialize() { min = nullptr; }
+		BinomialNode<T>* GetMin() { return min; }
 
 	private:
 		BinomialNode<T>* min;
