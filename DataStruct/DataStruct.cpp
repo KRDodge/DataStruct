@@ -29,6 +29,8 @@
 
 #include "include/chapter9/LeftistTree.h"
 
+#include "include/chapter10/AVL.h"
+
 using namespace Chapter1;
 using namespace Chapter2;
 using namespace Chapter3;
@@ -37,6 +39,7 @@ using namespace Chapter5;
 using namespace Chapter6;
 using namespace Chapter7;
 using namespace Chapter9;
+using namespace Chapter10;
 
 int main()
 {
@@ -75,7 +78,9 @@ int main()
 
 	//TestSort();
 
-	TestLeftistTree();
+	//TestLeftistTree();
+
+	TestAVL();
 
 	return 0;
 }

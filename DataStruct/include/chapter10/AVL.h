@@ -1,4 +1,9 @@
 #pragma once
+#include <iostream>
+#include <queue>
+#include <stack>
+
+using namespace std;
 
 namespace Chapter10
 {
@@ -16,6 +21,9 @@ namespace Chapter10
 			bf = 0;
 			leftChild = rightChild = 0;
 		};
+		E& GetElement() { return element; };
+		AvlNode<K, E>* Left() { return leftChild; };
+		AvlNode<K, E>* Right() { return rightChild; };
 	private:
 		K key;
 		E element;
@@ -31,9 +39,53 @@ namespace Chapter10
 		AVL() : root(nullptr) {};
 		E& Search(const K&) const;
 		void Insert(const K&, const E&);
-		void Deelte(const K&);
+		void Delete(const K&);
+		bool IsEmpty() const;
+
+		template <class K, class E>
+		friend ostream& operator<<(ostream& os, const AVL<K, E>& a)
+		{
+			if (a.IsEmpty())
+				return os;
+			
+			//queue<AvlNode<K, E>*> q = a.root;
+			
+			/*q.push(a.root);
+
+			AvlNode<K, E>* front;
+
+			while (!q.empty())
+			{
+				front = q.front();
+				if(front->Left())
+					q.push(front->Left());
+				if(front->Right())
+					q.push(front->Right());
+				os << front->GetElement() << " ";
+				q.pop();
+			}*/
+
+			stack<AvlNode<K, E>*> s;
+			AvlNode<K, E>* current = a.root;
+
+			while (current || !s.empty()) {
+				while (current) {
+					s.push(current);
+					current = current->Left();
+				}
+
+				current = s.top();
+				s.pop();
+
+				os << current->GetElement() << " ";
+				current = current->Right();
+			}
+			return os;
+		}
 
 	private:
 		AvlNode<K, E>* root;
 	};
+
+	void TestAVL();
 }

@@ -46,6 +46,9 @@ namespace Chapter10
 		else
 			pp->rightChild = y;
 
+		if (a == nullptr)
+			return;
+
 		int d;
 		AvlNode<K, E>* b;
 		AvlNode<K, E>* c;
@@ -117,14 +120,14 @@ namespace Chapter10
 		}
 		else
 		{
-			if (b->bf == -1)
+			if (b->bf == -1) //RR회전
 			{
 				b->rightChild = a->leftChild;
 				a->leftChild = b;
 				a->bf = 0;
 				b->bf = 0;
 			}
-			else
+			else //RL회전
 			{
 				c = a->leftChild;
 				a->leftChild = c->rightChild;
@@ -158,5 +161,86 @@ namespace Chapter10
 		else
 			pa->rightChild = b;
 
+	}
+
+	template <class K, class E>
+	E& AVL<K, E>::Search(const K& k) const
+	{
+		AvlNode<K, E>* p = root;
+		while (p)
+		{
+			if (k < p->key)
+				p = p->leftChild;
+			else if (k > p->key)
+				p = p->rightChild;
+			else
+				return p->element;
+		}
+		throw "Key not found";
+	}
+
+	template <class K, class E>
+	void AVL<K, E>::Delete(const K& k)
+	{
+		AvlNode<K, E>* p = root;
+		AvlNode<K, E>* pp = nullptr;
+
+		while (p && p->key != k)
+		{
+			pp = p;
+			if (k < p->key)
+				p = p->leftChild;
+			else
+				p = p->rightChild;
+		}
+		if (!p) 
+			throw "Key not found";
+
+		if (p->leftChild && p->rightChild)
+		{
+			AvlNode<K, E>* s = p->rightChild;
+			AvlNode<K, E>* ps = p;
+			while (s->leftChild)
+			{
+				ps = s;
+				s = s->leftChild;
+			}
+
+			p->key = s->key;
+			p->element = s->element;
+			p = s;
+			pp = ps;
+		}
+
+		AvlNode<K, E>* c = (p->leftChild) ? p->leftChild : p->rightChild;
+		if (p == root)
+			root = c;
+		else if (p == pp->leftChild)
+			pp->leftChild = c;
+		else
+			pp->rightChild = c;
+
+		delete p;
+	}
+
+	template<class K, class E>
+	bool AVL<K, E>::IsEmpty() const
+	{
+		return root == nullptr;
+	}
+
+	void TestAVL()
+	{
+		AVL<int, int>* a = new AVL<int, int>;
+
+
+		a->Insert(1, 10);
+		a->Insert(3, 30);
+		a->Insert(5, 50);
+		a->Insert(4, 40);
+		a->Insert(2, 20);
+		a->Insert(6, 60);
+
+		cout << *a << endl;
 	}
 }
